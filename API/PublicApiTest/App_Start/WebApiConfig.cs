@@ -1,5 +1,6 @@
 ﻿using iasset.GlobalWeatherProvider.Core;
 using iasset.GlobalWeatherProvider.Core.Interface;
+using Iasset.Weatherapi.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Iasset.Weatherapi
         {
             // Web API configuration and services
             config.EnableCors();
+
+            config.Filters.Add(new GlobalExceptionFilterAttribute());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

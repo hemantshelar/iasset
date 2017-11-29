@@ -10,7 +10,9 @@ namespace Iasset.Weatherapi.Controllers
     [RoutePrefix("api/WeatherInfo")]
     public class WeatherInfoController : ApiController
     {
-        IGlobalWeatherProvider _globalWeatherProvider = null;
+        #region Private members.
+        private IGlobalWeatherProvider _globalWeatherProvider = null;
+        #endregion
 
         #region ctor
         public WeatherInfoController(IGlobalWeatherProvider _globalWeatherProvider)
@@ -23,7 +25,7 @@ namespace Iasset.Weatherapi.Controllers
         [HttpGet]
         [Route("getCountries")]
         public async Task<IHttpActionResult> GetCountries()
-        {
+        {            
             var countries = await Task.Run(() => _globalWeatherProvider.GetCountries());
 
             return Ok(countries);

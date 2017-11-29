@@ -8,13 +8,12 @@ using System.Web.Http.Filters;
 
 namespace Iasset.Weatherapi.Filters
 {
-    public class GlobalExceptionFilterAttribute : ExceptionFilterAttribute
+    public class GlobalExceptionFilterAttribute : ExceptionFilterAttribute , IExceptionFilter
     {
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
-            //actionExecutedContext.Exception
+            //Log exception details into database or notify someone...
 
-            //actionExecutedContext.Response.Content.
             var response = new HttpResponseMessage();
             response.StatusCode = System.Net.HttpStatusCode.InternalServerError;
             response.Content = new StringContent("Unhandled exception in the WebAPI.");
