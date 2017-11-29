@@ -36,7 +36,11 @@ app.factory('myInterceptor',function($log){
 });
 
 app.controller('MainCtrl',function($scope,LoggerSvc){
-    $scope.testMessage = "MainCtrl test message.";  
+    $scope.testMessage = "MainCtrl test message.";
+    $scope.navClicked = function(element){
+        $('nav li').removeClass('active');
+        $('nav li#' + element).addClass('active');
+    }
 });
 
 app.controller('HomeCtrl',function($scope ){

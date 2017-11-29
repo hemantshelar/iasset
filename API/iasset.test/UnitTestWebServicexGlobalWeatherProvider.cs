@@ -52,6 +52,20 @@ namespace iasset.test
             Assert.AreEqual(0, result.Count);
         }
 
+
+        [TestMethod]
+        [Owner("hemant")]
+        [ExpectedException(typeof(Exception))]
+        public void TestGetWeather_It_Shoud_Throw_Exception_If_Country_Is_Unknown()
+        {
+            //Setup
+            WebServicexGlobalWeatherProvider _provider = new WebServicexGlobalWeatherProvider();
+            City city = new City { Country = "Unknown", Name = "Sydney" };
+
+            //Act
+            var result = _provider.GetWeather(city);
+        }
+
         [TestMethod]
         [Owner("hemant")]
         public void TestGetWeather_It_Shoud_Return_Weather_Parameters()

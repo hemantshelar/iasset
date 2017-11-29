@@ -45,8 +45,17 @@ namespace Iasset.Weatherapi.Controllers
         [Route("getWeatherInfo")]
         public async Task<IHttpActionResult> GetWeatherInfo(string country, string city)
         {
-            var countries = await Task.Run(() => _globalWeatherProvider.GetWeather(new City { Name = city , Country = country }));
-            return Ok(countries);
+            WeatherInfo result = null;
+            try
+            {
+                result = await Task.Run(() => _globalWeatherProvider.GetWeather(new City { Name = city, Country = country }));
+            }
+            catch (System.Exception)
+            {
+                return NotFound();
+            }
+            
+            return Ok(result);
         }
         #endregion 
     }
