@@ -1,0 +1,38 @@
+<style>
+    .loader{
+        height: 30px;
+        width: 30px;
+    }
+</style>
+<div class="panel panel-primary">
+    <div class="panel-heading">Weather Info</div>
+    <div class="panel-body"></div>
+        <div class="row">
+            <div class="col-md-2"><span>Select Country</span></div>
+            <div class="col-md-3">
+                <select class="form-control" ng-change="onCountryChanged()" 
+                ng-model="selectedCountry" ng-options="country.Name for country in countries">
+                    
+                </select>
+            </div>            
+        </div>
+       <br/>
+        <div class="row">
+            <div class="col-md-2"><span>Select City</span></div>
+            <div class="col-md-3">
+                <select class="form-control" 
+                ng-change="onCityChanged()"
+                ng-model="selectedCity"
+                ng-options="city.Name for city in cities">
+                </select>
+            </div>
+        </div>
+        <br/>
+
+        <div class="row">
+            <div class="col-md-4">
+                <weather-info ng-show="weatherInfo"></weather-info>
+            </div>
+        </div>
+    </div>
+</div>

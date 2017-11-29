@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>iasset - Technical Test</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-app="myApp" ng-controller="MainCtrl" class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Technical Test</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#!WeatherInfo">Weather Info</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>  
+    <ng-view></ng-view>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="js/app.js"></script>
+<script src="js/Controllers/WeatherInfoCtrl.js"></script>
+<script src="js/Directives/weatherInfoDirective.js"></script>
+<script src="js/Services/WheatherResourceSvc.js"></script>
+<script src="js/Services/LoggerSvc.js"></script>
+</html>

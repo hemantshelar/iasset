@@ -1,0 +1,47 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Weather in - {{selectedCity.Name}},{{selectedCity.Country}}</div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <td>Location</td>
+                        <td>{{weatherInfo.LocationLon}},{{weatherInfo.LocationLat}}</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>{{weatherInfo.Time}}</td>
+                    </tr>
+                    <tr>
+                        <td>Wind</td>
+                        <td>{{weatherInfo.WindSpeed}}</td>
+                    </tr>
+                    <tr>
+                        <td>Visibility</td>
+                        <td>{{weatherInfo.Visibility}}</td>
+                    </tr>
+                    <tr>
+                        <td>Sky conditions</td>
+                        <td>{{weatherInfo.SkyCondition}}</td>
+                    </tr>
+                    <tr>
+                        <td>Temperature</td>
+                        <td>{{weatherInfo.Temperature}}</td>
+                    </tr>
+                    <tr>
+                        <td>Dew Point</td>
+                        <td>{{weatherInfo.DewPoint}}</td>
+                    </tr>
+                    <tr>
+                        <td>Relative Humidity</td>
+                        <td>{{weatherInfo.Humidity}}</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>{{weatherInfo.Pressure}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
